@@ -3,7 +3,7 @@
 
 **(Entregables)**
 
-### Sección 1 - Ejercicio 1:
+### Sección 2 - Ejercicio 1:
 
 Para este primer ejercicio tendréis que realizar lo siguiente:
 
@@ -14,4 +14,10 @@ Para este primer ejercicio tendréis que realizar lo siguiente:
 Recordatorio: Los tipos de datos más comunes son int, long, double, boolean, String.
 
 **NOTA:** Entregable en la Clase 'Ejercicio1'
+___
+### Sección 3 - Ejercicio 2:
+
+Para este ejercicio tendréis que crear una función que reciba un precio y devuelva el precio con el IVA incluido.
+
+**NOTA:** Entregable en la Clase 'Ejercicio2'
 ___
