@@ -21,3 +21,14 @@ Para este ejercicio tendréis que crear una función que reciba un precio y devu
 
 **NOTA:** Entregable en la Clase 'Ejercicio2'
 ___
+### Sección 4 - Ejercicio 3:
+
+En este ejercicio tenéis que crear un bucle que permita concatenar textos e imprima el resultado final por consola.
+
+Tened en cuenta que los textos pueden venir de un array de tipo String. Por ejemplo:
+```
+String[] nombres = {"", "", "", ""}
+```
+
+**NOTA:** Entregable en la Clase 'Ejercicio3'
+___
