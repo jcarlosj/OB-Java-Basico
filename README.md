@@ -44,3 +44,20 @@ Desde una clase Main: crearéis objetos de cada una y los utilizaréis para impr
 
 **NOTA:** Entregable en la Clase 'Ejercicio4' y todas las clases asociadas dentro del paquete 'smarts'
 ___
+### Sección 6 - Ejercicio 5:
+
+Crear una interfaz `CocheCRUD`.
+
+Crear una implementación `CocheCRUDImpl` que implemente la interfaz `CocheCRUD`.
+
+Como métodos de `CocheCRUD` podemos poner:
+
+`save()` `findAll()` `delete()` que simplemente impriman por consola el nombre del propio método.
+
+Desde una clase `Main`, Crear un objeto de tipo `CocheCRUDImpl` y llamar a cada uno de los métodos.
+
+Ejemplo:
+```
+    CocheCRUD cocheCrud = new CocheCRUDImpl()
+```
+**NOTA:** Entregable en la Clase 'Ejercicio5' y todas las clases asociadas dentro del paquete 'coche'
