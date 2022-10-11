@@ -1,5 +1,8 @@
 package com.github.jcarlosj;
 
+import java.io.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Vector;
@@ -13,6 +16,7 @@ public class Ejercicio789 {
         punto5();
         punto6();
         punto7();
+        punto8( "blog.txt", "blog.copy.txt" );
     }
 
     /** Punto 0: Retorna una cadena al revés */
@@ -151,4 +155,38 @@ public class Ejercicio789 {
         return 5 / 0;
     }
 
+    /** 8. Utilizando InputStream y PrintStream, crea una función que reciba dos parámetros: "fileIn" y "fileOut". La tarea de la función será realizar la copia del fichero dado en el parámetro "fileIn" al fichero dado en "fileOut". */
+    public static void punto8( String fileIn, String fileOut ) {
+        String absoluteFilePath = getCurrentPath() + getCurrentPackagePath() + "/";
+        String inputFilePath = absoluteFilePath + fileIn;
+        String outputFilePath = absoluteFilePath + fileOut;
+
+        System.out.println( "8. Utilizando InputStream y PrintStream, crea una función que reciba dos parámetros: \"fileIn\" y \"fileOut\". La tarea de la función será realizar la copia del fichero dado en el parámetro \"fileIn\" al fichero dado en \"fileOut\"." );
+//        System.out.println( inputFilePath );
+//        System.out.println( outputFilePath );
+
+        try {
+            InputStream originalFile = new FileInputStream( inputFilePath );
+            PrintStream fileCopy = new PrintStream( outputFilePath );
+
+            byte data[] = originalFile.readAllBytes();
+            fileCopy.write( data );
+            System.out.println( "\tSe ha realizado una copia del archivo '" + fileIn + "' con el nombre de '" + fileOut + "'" );
+        }
+        catch( IOException e ) {
+            System.out.println( e.getMessage() );
+        }
+    }
+    public static String getCurrentPath() {
+        Path currentRelativePath = Paths.get( "" );            // Current Relative Path
+
+        return currentRelativePath.toAbsolutePath().toString();     // Current Absolute Path
+    }
+    public static String getCurrentPackagePath() {
+        Ejercicio789 object = new Ejercicio789();
+        String packageName = object.getClass().getPackage().getName();
+        String packagePath = packageName.replaceAll( "\\.", "/" ); // Current Package Path
+
+        return "/src/" + packagePath;
+    }
 }
