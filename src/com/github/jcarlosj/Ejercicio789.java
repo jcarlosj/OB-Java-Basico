@@ -11,6 +11,7 @@ public class Ejercicio789 {
         punto2();
         punto3();
         punto5();
+        punto6();
     }
 
     /** Punto 0: Retorna una cadena al revés */
@@ -105,6 +106,27 @@ public class Ejercicio789 {
         for( String lang : llLanguages )
             System.out.print( lang + ", " );
         System.out.println( "" );
+
+    }
+
+    /** 6. Crea un ArrayList de tipo int, y, utilizando un bucle rellénalo con elementos 1..10. A continuación, con otro bucle, recórrelo y elimina los numeros pares. Por último, vuelve a recorrerlo y muestra el ArrayList final. Si te atreves, puedes hacerlo en menos pasos, siempre y cuando cumplas el primer "for" de relleno. */
+    public static void punto6() {
+        ArrayList<Integer> numbers = new ArrayList<Integer>();
+
+        System.out.println( "6. Crea un ArrayList de tipo int, y, utilizando un bucle rellénalo con elementos 1..10. A continuación, con otro bucle, recórrelo y elimina los numeros pares. Por último, vuelve a recorrerlo y muestra el ArrayList final. Si te atreves, puedes hacerlo en menos pasos, siempre y cuando cumplas el primer \"for\" de relleno." );
+
+        for( int i = 1; i <= 10; i++ )
+            numbers.add( i );
+
+        System.out.print( "\t" + numbers );
+
+        for( int i = 1; i < numbers.size(); i++ )
+            if( numbers.get( i ) % 2 == 0 )
+                numbers.remove( i );
+
+        System.out.print( "\n\t" );
+        for( int number : numbers )
+            System.out.print( number + ", " );
 
     }
 }
