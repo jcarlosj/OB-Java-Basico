@@ -12,6 +12,7 @@ public class Ejercicio789 {
         punto3();
         punto5();
         punto6();
+        punto7();
     }
 
     /** Punto 0: Retorna una cadena al revés */
@@ -128,5 +129,26 @@ public class Ejercicio789 {
         for( int number : numbers )
             System.out.print( number + ", " );
 
+        System.out.println( "" );
     }
+
+    /** 7. Crea una función DividePorCero. Esta, debe generar una excepción ("throws") a su llamante del tipo ArithmeticException que será capturada por su llamante (desde "main", por ejemplo). Si se dispara la excepción, mostraremos el mensaje "Esto no puede hacerse". Finalmente, mostraremos en cualquier caso: "Demo de código". */
+    public static void punto7() {
+        System.out.println( "7. Crea una función DividePorCero. Esta, debe generar una excepción (\"throws\") a su llamante del tipo ArithmeticException que será capturada por su llamante (desde \"main\", por ejemplo). Si se dispara la excepción, mostraremos el mensaje \"Esto no puede hacerse\". Finalmente, mostraremos en cualquier caso: \"Demo de código\"." );
+
+        try {
+            double v = dividePorCero();
+            System.out.println( v );
+        }
+        catch ( ArithmeticException e ) {
+            System.out.println( "\tEsto no puede hacerse" );
+        }
+        finally {
+            System.out.println( "\tDemo de código" );
+        }
+    }
+    public static double dividePorCero() {
+        return 5 / 0;
+    }
+
 }
