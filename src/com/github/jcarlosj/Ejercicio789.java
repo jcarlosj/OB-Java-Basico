@@ -1,5 +1,7 @@
 package com.github.jcarlosj;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Vector;
 
 public class Ejercicio789 {
@@ -8,6 +10,7 @@ public class Ejercicio789 {
         punto1();
         punto2();
         punto3();
+        punto5();
     }
 
     /** Punto 0: Retorna una cadena al revés */
@@ -75,6 +78,33 @@ public class Ejercicio789 {
         System.out.print( "\t" );
         for( String value : languages )
             System.out.print( value + ", " );
+
+    }
+
+    /** 4. Indica cuál es el problema de utilizar un Vector con la capacidad por defecto si tuviésemos 1000 elementos para ser añadidos al mismo. */
+
+    /** 5. Crea un ArrayList de tipo String, con 4 elementos. Cópialo en una LinkedList. Recorre ambos mostrando únicamente el valor de cada elemento. */
+    public static void punto5() {
+        ArrayList<String> alLanguages = new ArrayList<String>();
+
+        System.out.println( "5. Crea un ArrayList de tipo String, con 4 elementos. Cópialo en una LinkedList. Recorre ambos mostrando únicamente el valor de cada elemento." );
+
+        alLanguages.add( "Español" );
+        alLanguages.add( "Inglés" );
+        alLanguages.add( "Portugues" );
+        alLanguages.add( "Francés" );
+
+        LinkedList<String> llLanguages = new LinkedList<String>( alLanguages );
+
+        System.out.print( "\t(ArrayList): " );
+        for( String lang : alLanguages )
+            System.out.print( lang + ", " );
+        System.out.println( "" );
+
+        System.out.print( "\t(LinkedList): " );
+        for( String lang : llLanguages )
+            System.out.print( lang + ", " );
+        System.out.println( "" );
 
     }
 }
