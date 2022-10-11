@@ -1,10 +1,13 @@
 package com.github.jcarlosj;
 
+import java.util.Vector;
+
 public class Ejercicio789 {
     public static void main(String[] args) {
         System.out.println( "\t" + reverse( "hola mundo!" ) );
         punto1();
         punto2();
+        punto3();
     }
 
     /** Punto 0: Retorna una cadena al revés */
@@ -51,6 +54,27 @@ public class Ejercicio789 {
 
             System.out.println( "" );
         }
+
+    }
+
+    /** 3. Crea un "Vector" del tipo de dato que prefieras, y añádele 5 elementos. Elimina el 2o y 3er elemento y muestra el resultado final. */
+    public static void punto3() {
+        Vector<String> languages = new Vector<String>();
+
+        System.out.println( "3. Crea un \"Vector\" del tipo de dato que prefieras, y añádele 5 elementos. Elimina el 2o y 3er elemento y muestra el resultado final." );
+
+        languages.add( "Español" );
+        languages.add( "Inglés" );
+        languages.add( "Portugues" );
+        languages.add( "Francés" );
+        languages.add( "Alemán" );
+
+        languages.remove( 2 );
+        languages.remove( 3 );
+
+        System.out.print( "\t" );
+        for( String value : languages )
+            System.out.print( value + ", " );
 
     }
 }
