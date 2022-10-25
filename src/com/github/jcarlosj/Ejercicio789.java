@@ -13,14 +13,14 @@ public class Ejercicio789 {
     static ArrayList<String> phrases = new ArrayList<String>();
 
     public static void main(String[] args) {
-//        System.out.println( "\t" + reverse( "hola mundo!" ) );
-//        punto1();
-//        punto2();
-//        punto3();
-//        punto5();
-//        punto6();
-//        punto7();
-//        punto8( "blog.txt", "blog.copy.txt" );
+        System.out.println( "\t" + reverse( "hola mundo!" ) );
+        punto1();
+        punto2();
+        punto3();
+        punto5();
+        punto6();
+        punto7();
+        punto8( "blog.txt", "blog.copy.txt" );
         punto9();
     }
 
@@ -196,17 +196,18 @@ public class Ejercicio789 {
     }
     /** 9. Sorpréndenos creando un programa de tu elección que utilice InputStream, PrintStream, excepciones, un HashMap y un ArrayList, LinkedList o array. */
     public static void punto9() {
+        System.out.println( "9. Sorpréndenos creando un programa de tu elección que utilice InputStream, PrintStream, excepciones, un HashMap y un ArrayList, LinkedList o array." );
         ArrayList<String> arrText = new ArrayList<String>();
 
         File file = createFile( "sample.txt" );
-        System.out.println( "1. Crea el archivo: " + file.getName() );
+        System.out.println( "  1. Crea el archivo: " + file.getName() );
 
         writeArrayFile( file );
         arrText = readArrayFile( file );
 
-        System.out.println( "*** " + file.getName() + " ***" );
+        System.out.println( "  *** " + file.getName() + " ***" );
         for( String line : arrText ) {
-            System.out.println( "  " + line );
+            System.out.println( "\t" + line );
         }
     }
     // Codigo para crear un archivo
@@ -244,7 +245,7 @@ public class Ejercicio789 {
                 fos.write( string.getBytes() );
             }
 
-            System.out.println( "2. Escribe el archivo: " + file.getName() );
+            System.out.println( "  2. Escribe el archivo: " + file.getName() );
             fos.flush();
             fos.close();
         }
@@ -276,7 +277,7 @@ public class Ejercicio789 {
                 ascii = fis.read();
             }
 
-            System.out.println( "3. Lee el archivo: " + file.getName() );
+            System.out.println( "  3. Lee el archivo: " + file.getName() );
             fis.close();
         }
         catch( IOException e ) {
