@@ -4,19 +4,24 @@ import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Vector;
 
 public class Ejercicio789 {
+
+    static ArrayList<String> phrases = new ArrayList<String>();
+
     public static void main(String[] args) {
-        System.out.println( "\t" + reverse( "hola mundo!" ) );
-        punto1();
-        punto2();
-        punto3();
-        punto5();
-        punto6();
-        punto7();
-        punto8( "blog.txt", "blog.copy.txt" );
+//        System.out.println( "\t" + reverse( "hola mundo!" ) );
+//        punto1();
+//        punto2();
+//        punto3();
+//        punto5();
+//        punto6();
+//        punto7();
+//        punto8( "blog.txt", "blog.copy.txt" );
+        punto9();
     }
 
     /** Punto 0: Retorna una cadena al revés */
@@ -188,5 +193,96 @@ public class Ejercicio789 {
         String packagePath = packageName.replaceAll( "\\.", "/" ); // Current Package Path
 
         return "/src/" + packagePath;
+    }
+    /** 9. Sorpréndenos creando un programa de tu elección que utilice InputStream, PrintStream, excepciones, un HashMap y un ArrayList, LinkedList o array. */
+    public static void punto9() {
+        ArrayList<String> arrText = new ArrayList<String>();
+
+        File file = createFile( "sample.txt" );
+        System.out.println( "1. Crea el archivo: " + file.getName() );
+
+        writeArrayFile( file );
+        arrText = readArrayFile( file );
+
+        System.out.println( "*** " + file.getName() + " ***" );
+        for( String line : arrText ) {
+            System.out.println( "  " + line );
+        }
+    }
+    // Codigo para crear un archivo
+    public static File createFile( String fileName ) {
+        File file = new File( fileName );      // Instancia que representa al archivo, no su creación
+
+        if( ! file.exists() ) {                             // Verificamos si el archivo existe
+            try {
+                file.createNewFile();                       // Crea el archivo
+            }
+            catch( IOException e ) {
+                e.printStackTrace();
+            }
+        }
+
+        return file;
+    }
+    //  Escribe un archivo con los datos contenidos en un ArrayList
+    public static void writeArrayFile( File file ) {
+        ArrayList<String> list = new ArrayList<String>(
+            Arrays.asList(
+                "Hola estamos escribiendo este archivo y para poder realizarlo estamos",
+                "usando las clases: File, FileInputStream, FileOutputStream, ArrayList"
+            )
+        );
+
+        list.add( "Buen dia!" );
+
+        // Escribiendo texto en el archivo creado usando FileOutputStream
+        try {
+            FileOutputStream fos = new FileOutputStream( file );
+
+            for ( String string : list ) {
+                string += "\n";
+                fos.write( string.getBytes() );
+            }
+
+            System.out.println( "2. Escribe el archivo: " + file.getName() );
+            fos.flush();
+            fos.close();
+        }
+        catch( IOException e ) {
+            System.out.println( e.getMessage() );
+        }
+    }
+    //  Lee un archivo y retorna cada linea del mismo en un ArrayList
+    public static ArrayList<String> readArrayFile( File file ) {
+        ArrayList<String> arrText = new ArrayList<String>();
+        String text = "";
+
+        // Leyendo texto del archivo usando FileInputStream
+        try {
+            FileInputStream fis = new FileInputStream( file );
+            int ascii = fis.read();
+
+            while( ascii != -1  ) {
+                char character = (char) ascii;
+
+                if( ascii != 10 ) {
+                    text += character;
+                }
+                else {
+                    arrText.add( text );
+                    text = "";
+                }
+
+                ascii = fis.read();
+            }
+
+            System.out.println( "3. Lee el archivo: " + file.getName() );
+            fis.close();
+        }
+        catch( IOException e ) {
+            System.out.println( e.getMessage() );
+        }
+
+        return arrText;
     }
 }

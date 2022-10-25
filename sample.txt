@@ -1,2 +1,3 @@
-Hola estamos escribiendo este archivo
-Buen día!
+Hola estamos escribiendo este archivo y para poder realizarlo estamos
+usando las clases: File, FileInputStream, FileOutputStream, ArrayList
+Buen dia!
