@@ -2,6 +2,8 @@ package com.github.jcarlosj.swingui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainForm {
     private JLabel priceLabel;
@@ -12,6 +14,19 @@ public class MainForm {
     private JTextPane textPaneTotal;
     private JButton calculateButton;
     private JPanel panelForm;
+
+    public MainForm() {
+        calculateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                double price = Double.parseDouble( textPanePrice.getText() );
+                double iva = Double.parseDouble( textPaneIva.getText() );
+                double total = price + ( price / 100 * iva );
+
+                textPaneTotal.setText( Double.toString( total ) );
+            }
+        });
+    }
 
     public static void main(String[] args) {
         // Crea jframe como de costumbre
