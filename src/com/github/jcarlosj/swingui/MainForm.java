@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class MainForm {
     private JLabel priceLabel;
@@ -15,8 +17,12 @@ public class MainForm {
     private JButton calculateButton;
     private JPanel panelForm;
 
-    public MainForm() {
+    public <price> MainForm() {
+
+        double iva = 0.0;
+
         calculateButton.addActionListener(new ActionListener() {
+
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 double price = Double.parseDouble( textPanePrice.getText() );
@@ -24,6 +30,14 @@ public class MainForm {
                 double total = price + ( price / 100 * iva );
 
                 textPaneTotal.setText( Double.toString( total ) );
+            }
+        });
+        textPanePrice.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                super.keyReleased(e);
+
+                System.out.println( textPanePrice.getText() );
             }
         });
     }
