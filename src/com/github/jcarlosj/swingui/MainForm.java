@@ -42,6 +42,8 @@ public class MainForm {
         });
     }
 
+    // Observer pattern: Una entidad que esta contantemente en escucha y cuando algo esperado se produce invoca un método que realiza una acción
+
     public static void main(String[] args) {
         // Crea jframe como de costumbre
         JFrame frame = new JFrame( "Swing - Iva" );
