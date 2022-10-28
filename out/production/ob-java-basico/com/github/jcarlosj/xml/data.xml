@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<credentials>
+    <username>jcarlosj</username>
+    <password>loquesealacontraseña</password>
+    <site>OpenBootcamp</site>
+    <videos path="FullStack" course="Java Básico">
+        <video>Manejo de errores</video>
+        <video>XML y JSON</video>
+        <video>Interfaces</video>
+    </videos>
+</credentials>
