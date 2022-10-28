@@ -1,0 +1,12 @@
+{
+  "credentials": {
+    "username": "jcarlosj",
+    "password": "loquesealacontraseña",
+    "site": "OpenBootcamp",
+    "videos": [
+      "Manejo de errores",
+      "XML y JSON",
+      "Interfaces"
+    ]
+  }
+}
